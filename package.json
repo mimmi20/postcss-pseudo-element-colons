@@ -4,7 +4,16 @@
   "description": "PostCSS plugin to format single or double colon notation on pseudo elements.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest run",
+    "coverage": "vitest run --coverage",
+    "typecheck": "vitest typecheck",
+    "postcss": "postcss ./test/fixtures/*.test.{css,scss} --config ./test/fixtures/postcss.config.mjs -r",
+    "pack": "npm pack",
+    "release": "npm login && npx clean-publish",
+    "prettier": "prettier --config prettier.config.mjs --check index.js src/*.js test/*.js eslint.config.mjs prettier.config.mjs test/fixtures/postcss.config.mjs",
+    "prettier-fix": "prettier --config prettier.config.mjs --write index.js src/*.js test/*.js eslint.config.mjs prettier.config.mjs test/fixtures/postcss.config.mjs",
+    "eslint": "eslint . --config eslint.config.mjs",
+    "eslint-fix": "eslint . --config eslint.config.mjs --fix"
   },
   "repository": {
     "type": "git",
@@ -26,7 +35,24 @@
     "url": "https://github.com/timelsass/postcss-pseudo-element-colons/issues"
   },
   "homepage": "https://github.com/timelsass/postcss-pseudo-element-colons#readme",
-  "dependencies": {
-    "postcss": "^5.2.8"
-  }
+  "devDependencies": {
+    "@eslint/js": "^9.20.0",
+    "@vitest/coverage-istanbul": "^3.0.5",
+    "clean-publish": "^5.1.0",
+    "eslint": "^9.20.1",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.3",
+    "eslint-plugin-promise": "^7.2.1",
+    "eslint-plugin-security": "^3.0.1",
+    "postcss": "^8.5.2",
+    "postcss-cli": "^11.0.0",
+    "postcss-scss": "^4.0.9",
+    "prettier": "^3.5.1",
+    "vitest": "^3.0.1"
+  },
+  "peerDependencies": {
+    "postcss": "^8.0.0"
+  },
+  "type": "module"
 }
