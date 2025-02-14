@@ -27,6 +27,7 @@ Turn `.fancy-style:before {` into `.fancy-style::before {` and vice versa.
 ```shell
 npm install postcss-pseudo-element-colons --save-dev
 ```
+
 *Note:  This plugin is for [PostCSS](https://github.com/postcss/postcss), so you would need to install that as well.*
 
 ## Usage
