@@ -10,8 +10,8 @@
     "postcss": "postcss ./test/fixtures/*.test.{css,scss} --config ./test/fixtures/postcss.config.mjs -r",
     "pack": "npm pack",
     "release": "npm login && npx clean-publish",
-    "prettier": "prettier --config prettier.config.mjs --check index.js src/*.js test/*.js eslint.config.mjs prettier.config.mjs test/fixtures/postcss.config.mjs",
-    "prettier-fix": "prettier --config prettier.config.mjs --write index.js src/*.js test/*.js eslint.config.mjs prettier.config.mjs test/fixtures/postcss.config.mjs",
+    "prettier": "prettier --config prettier.config.mjs --check index.js test/*.js eslint.config.mjs prettier.config.mjs",
+    "prettier-fix": "prettier --config prettier.config.mjs --write index.js test/*.js eslint.config.mjs prettier.config.mjs",
     "eslint": "eslint . --config eslint.config.mjs",
     "eslint-fix": "eslint . --config eslint.config.mjs --fix"
   },

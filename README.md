@@ -4,7 +4,8 @@
 
 Turn `.fancy-style:before {` into `.fancy-style::before {` and vice versa.
 
-### Jump To Section
+## Jump To Section
+
 - [Installation](#installation)
 - [Usage](#usage)
   - [postcss-cli](#with-postcss-cli)
@@ -23,9 +24,10 @@ Turn `.fancy-style:before {` into `.fancy-style::before {` and vice versa.
 
 ## Installation
 
+```shell
+npm install postcss-pseudo-element-colons --save-dev
 ```
-$ npm install postcss-pseudo-element-colons --save-dev
-```
+
 *Note:  This plugin is for [PostCSS](https://github.com/postcss/postcss), so you would need to install that as well.*
 
 ## Usage
@@ -33,10 +35,11 @@ $ npm install postcss-pseudo-element-colons --save-dev
 ### With postcss-cli
 
 ```shell
-$ postcss --use postcss-pseudo-element-colons style.css
+postcss --use postcss-pseudo-element-colons style.css
 ```
 
-### With Node.js:
+### With Node.js
+
 ```js
 var fs           = require( 'fs' ),
     postcss      = require( 'postcss' ),
@@ -139,16 +142,16 @@ const
     "colon-notation": "single"
   };
 
-gulp.task( 'postcss', function(){
-	gulp.src( 'src/style.css' )
-		.pipe( postcss( [ pseudoColons( options ) ] ) )
-		.pipe( gulp.dest( 'dist' ) );
+gulp.task('postcss', function() {
+  gulp.src('src/style.css')
+    .pipe(postcss([pseudoColons(options)]))
+    .pipe(gulp.dest('dist'));
 });
 ```
 
 ## Options
 
-### Default Options:
+### Default Options
 
 ```json
 {
@@ -175,7 +178,6 @@ Accepts `"single"` or  `"double"` for the psudeo-element's colon notation.
 `"single"` produces syntax like: `.fancy-style:before {`
 
 `"double"` produces syntax like `.fancy-style::before {`
-
 
 ## Examples
 
