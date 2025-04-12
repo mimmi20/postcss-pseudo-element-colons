@@ -17,7 +17,7 @@ const plugin = (options = {}) => {
       if (!rule.selector.match(replacements)) {
         return;
       }
-      
+
       const notation = currentOptions['colon-notation'] === 'double' ? '::' : ':';
 
       rule.selector = rule.selector.replace(replacements, notation + '$1');
