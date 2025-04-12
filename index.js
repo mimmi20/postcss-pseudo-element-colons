@@ -13,6 +13,11 @@ const plugin = (options = {}) => {
     postcssPlugin: 'postcss-pseudo-element-colons',
     Rule(rule) {
       const replacements = new RegExp('(?:|:):(' + currentOptions.selectors.join('|') + ')', 'gi');
+
+      if (!rule.selector.match(replacements)) {
+        return;
+      }
+      
       const notation = currentOptions['colon-notation'] === 'double' ? '::' : ':';
 
       rule.selector = rule.selector.replace(replacements, notation + '$1');
