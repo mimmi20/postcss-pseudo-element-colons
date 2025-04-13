@@ -9,18 +9,26 @@ const plugin = (options = {}) => {
     ...options,
   };
 
+  const visited = new WeakSet();
+
   return {
     postcssPlugin: 'postcss-pseudo-element-colons',
     Rule(rule) {
+      if (visited.has(rule)) {
+        return;
+      }
+
       const replacements = new RegExp('(?:|:):(' + currentOptions.selectors.join('|') + ')', 'gi');
 
       if (!rule.selector.match(replacements)) {
+        visited.add(rule);
         return;
       }
 
       const notation = currentOptions['colon-notation'] === 'double' ? '::' : ':';
 
       rule.selector = rule.selector.replace(replacements, notation + '$1');
+      visited.add(rule);
     },
   };
 };
