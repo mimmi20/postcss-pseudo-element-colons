@@ -37,8 +37,8 @@
   "homepage": "https://github.com/timelsass/postcss-pseudo-element-colons#readme",
   "devDependencies": {
     "@eslint/js": "^9.39.4",
-    "@vitest/coverage-istanbul": "^4.0.18",
-    "clean-publish": "^6.0.3",
+    "@vitest/coverage-istanbul": "^4.1.2",
+    "clean-publish": "^6.0.5",
     "eslint": "^9.39.4",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.32.0",
