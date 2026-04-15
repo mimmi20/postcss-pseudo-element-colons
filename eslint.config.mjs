@@ -54,7 +54,12 @@ export default [
       depend,
     },
     rules: {
-      'depend/ban-dependencies': 'error',
+      'depend/ban-dependencies': [
+        'error',
+        {
+          presets: ['native', 'microutilities', 'preferred'],
+        },
+      ],
     },
   },
 ];
