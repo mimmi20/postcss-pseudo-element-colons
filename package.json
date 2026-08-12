@@ -46,7 +46,7 @@
     "eslint-plugin-prettier": "^5.5.6",
     "eslint-plugin-promise": "^7.3.0",
     "eslint-plugin-security": "^4.0.1",
-    "postcss": "^8.5.8",
+    "postcss": "^8.5.26",
     "postcss-cli": "^11.0.1",
     "postcss-scss": "^4.0.9",
     "prettier": "^3.9.5",
